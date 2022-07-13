@@ -1,12 +1,9 @@
-var canvas = document.getElementById("canvas");
-var context = canvas.getContext("2d");
-var totalX = window.innerWidth;
-var totalY = window.innerHeight;
+let canvas = document.getElementById("canvas");
+let context = canvas.getContext("2d");
+let totalX = window.innerWidth;
+let totalY = window.innerHeight;
 canvas.width = totalX;
 canvas.height = totalY;
-
-var grav = 0.99;
-context.strokeWidth = 5;
 
 function randomColor() {
   return (
@@ -37,8 +34,8 @@ function Ball() {
   };
 }
 
-var bal = [];
-for (var i = 0; i < 100; i++) {
+let bal = [];
+for (let i = 0; i < 100; i++) {
   bal.push(new Ball());
 }
 
@@ -51,7 +48,7 @@ function bouncingBall() {
   }
   requestAnimationFrame(bouncingBall);
   context.clearRect(0, 0, totalX, totalY);
-  for (var i = 0; i < bal.length; i++) {
+  for (let i = 0; i < bal.length; i++) {
     bal[i].draw();
     bal[i].y += bal[i].dy;
     bal[i].x += bal[i].dx;
