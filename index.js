@@ -40,12 +40,6 @@ for (let i = 0; i < 100; i++) {
 }
 
 function bouncingBall() {
-  if (totalX != window.innerWidth || totalY != window.innerHeight) {
-    totalX = window.innerWidth;
-    totalY = window.innerHeight;
-    canvas.width = totalX;
-    canvas.height = totalY;
-  }
   requestAnimationFrame(bouncingBall);
   context.clearRect(0, 0, totalX, totalY);
   for (let i = 0; i < bal.length; i++) {
@@ -66,4 +60,4 @@ bouncingBall();
 setInterval(function () {
   bal.push(new Ball());
   bal.splice(0, 1);
-}, 400);
+}, 500);
